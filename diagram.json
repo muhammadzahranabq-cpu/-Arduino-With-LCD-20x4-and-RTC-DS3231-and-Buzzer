@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Gemini AI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 240, "left": -150, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": -54.17, "left": -22.4, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc", "top": 240, "left": 280, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "buzzer", "top": 117.6, "left": -219, "attrs": {} }
+  ],
+  "connections": [
+    [ "buzzer:2", "uno:8", "red", [ "v7.2", "h202.2", "v9.6" ] ],
+    [ "buzzer:1", "uno:GND.1", "black", [ "v16.8", "h1" ] ],
+    [ "lcd:RS", "uno:7", "green", [ "v163.2", "h0.3" ] ],
+    [ "lcd:RW", "uno:6", "green", [ "v0" ] ],
+    [ "lcd:D4", "uno:5", "green", [ "v48", "h-48", "v9.6" ] ],
+    [ "lcd:D5", "uno:4", "green", [ "v57.6", "h-47.9" ] ],
+    [ "lcd:D6", "uno:3", "green", [ "v67.2", "h-47.8" ] ],
+    [ "lcd:D7", "uno:2", "green", [ "v76.8", "h-47.7" ] ],
+    [ "lcd:A", "rtc:5V", "red", [ "v96", "h115.1", "v96" ] ],
+    [ "lcd:K", "rtc:GND", "black", [ "v48", "h134.4", "v19.2" ] ],
+    [ "uno:A5", "rtc:SCL", "green", [ "v19.7", "h115.3", "v-172.8", "h-9.6" ] ],
+    [ "uno:A4", "rtc:SDA", "green", [ "v38.9", "h163.2", "v-201.6" ] ],
+    [ "rtc:5V", "uno:5V", "red", [ "h-87.9", "v224.6", "h-19.2", "v9.6", "h-172.8" ] ],
+    [ "rtc:GND", "uno:GND.3", "black", [ "h-116.7", "v225", "h-9.6" ] ]
+  ],
+  "dependencies": {}
+}
